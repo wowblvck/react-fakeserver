@@ -1,12 +1,13 @@
 import jsonServer from "json-server";
 import cors from "cors";
 import places from "./places/places";
+import countries from "./countries/countries";
 
 const server = jsonServer.create();
-const router = jsonServer.router({ places });
+const router = jsonServer.router({ places, countries });
 const middleWires = jsonServer.defaults();
 
-const PORT = process.env.PORT || 4000
+const PORT = process.env.PORT || 4000;
 
 server.use(cors());
 server.use(middleWires);
